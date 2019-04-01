@@ -1,20 +1,16 @@
 <h2>Create New Landmark</h2>
 
-<h2>Name: <%= @landmark.name %></h2>
-<h3>Year Completed: <%= @landmark.year_completed %></h3>
+<form action="/landmarks" method="POST">
+  <h1>Create a Landmark</h1>
+  <br>
+  <label>Landmark Name</label>
+  <input type="text" id="landmark_name" name="landmark[name]">
+  <br>
+  <label>Year Completed</label>
+  <input type="text" id="landmark_year_completed" name="landmark[year_completed]">
+  <br>
+  <input type="submit" value="Create New Landmark" class="button">
+</form>
 
- <form action="/landmarks/<%= @landmark.id %>" method="POST">
-<input type="hidden" name="_method" value="PATCH">
-
-   <p>Name:</p>
-  <input type="text" name="landmark[name]" id="name">
-
-   <p>Year Completed:</p>
-  <input type="text" name="landmark[year_completed]" id="year_completed">
-
-   <p><input type="submit" value="Edit Landmark" class="button"></p>
-
- </form>
-
-<a class="button" href="/figures">Landmarks</a>
+<a class="button" href="/landmarks">Landmarks</a>
 <a class="button" href="/">Home</a>
